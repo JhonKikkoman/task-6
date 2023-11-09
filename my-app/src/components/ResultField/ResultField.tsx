@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { stateT } from "../AddClockInput/AddClockInput";
 
-
 type propT = {
     propArr: stateT[],
     propClbk: Function
@@ -30,7 +29,7 @@ export function ResultField({ propArr, propClbk }: propT) {
         <>
             <div className="result_container">
                 {propArr.map(el => {
-                        const hrs = Number(time.setHours(time.getHours() + Number(el.timeLineValue)).toFixed(2));
+                        const hrs = time.getHours() + Number(el.timeLineValue);
                         const min = time.getMinutes();
                         const sec = time.getSeconds();
                     return (
